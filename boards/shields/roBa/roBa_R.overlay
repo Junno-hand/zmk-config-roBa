@@ -53,9 +53,13 @@
 
     trackball: trackball@0 {
         status = "okay";
-        compatible = "pixart,pmw3610";
+        trackball: pmw3320@0 {
+        compatible = "pixart,pmw3320"; /* ここをあなたのドライバ用に変更 */
         reg = <0>;
         spi-max-frequency = <2000000>;
-        irq-gpios = <&gpio0 2 (GPIO_ACTIVE_LOW | GPIO_PULL_UP)>;
+        irq-gpios = <&gpio0 2 (GPIO_ACTIVE_LOW | GPIO_PULL_UP)>; /* ピン番号は環境に合わせて */
+        /* その他、cpi や swap-xy などのプロパティ */
+        cpi = <1000>;
+        swap-xy;
     };
 };
