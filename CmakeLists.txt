@@ -1,0 +1,5 @@
+if(CONFIG_PMW3320)
+  zephyr_library_include_directories(${ZMK_DIR}/app/include)
+  # ドライバファイルを置いたパスを指定
+  zephyr_library_sources(drivers/sensor/pmw3320/pmw3320.c)
+endif()
